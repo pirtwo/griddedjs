@@ -1,0 +1,16 @@
+{
+  "name": "gridded",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Ahmad-Fz",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.2.2",
+    "jest-cli": "^26.2.2"
+  }
+}
