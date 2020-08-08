@@ -12,9 +12,9 @@ class Cell2D {
     }
 
     /**
-     * returns cell x and y coordinates in the grid.
+     * returns cell x and y position in the grid.
      */
-    coord() {
+    position() {
         let i = this.index();
         let y = Math.floor(i / this.grid.x);
         let x = i - y * this.grid.x;
@@ -26,12 +26,12 @@ class Cell2D {
      * @returns {Array}
      */
     adjacents() {
-        let { x, y } = this.coord();
+        let { x, y } = this.position();
 
         return [...this.grid].filter(cell => (
-                (cell.coord().y >= y - 1 && cell.coord().y <= y + 1 && cell.coord().x === x) ||
-                (cell.coord().x >= x - 1 && cell.coord().x <= x + 1 && cell.coord().y === y)) &&
-            !(cell.coord().y === y && cell.coord().x === x)
+                (cell.position().y >= y - 1 && cell.position().y <= y + 1 && cell.position().x === x) ||
+                (cell.position().x >= x - 1 && cell.position().x <= x + 1 && cell.position().y === y)) &&
+            !(cell.position().y === y && cell.position().x === x)
         );
     }
 
@@ -39,12 +39,12 @@ class Cell2D {
      * returns array of neighbour cells.
      */
     neighbours() {
-        let { x, y } = this.coord();
+        let { x, y } = this.position();
 
         return [...this.grid].filter(cell =>
-            (cell.coord().y >= y - 1 && cell.coord().y <= y + 1) &&
-            (cell.coord().x >= x - 1 && cell.coord().x <= x + 1) &&
-            !(cell.coord().y === y && cell.coord().x === x)
+            (cell.position().y >= y - 1 && cell.position().y <= y + 1) &&
+            (cell.position().x >= x - 1 && cell.position().x <= x + 1) &&
+            !(cell.position().y === y && cell.position().x === x)
         );
     }
 }
