@@ -1,6 +1,8 @@
 # Gridded.js
 [![Build Status](https://travis-ci.com/pirtwo/griddedjs.svg?branch=master)](https://travis-ci.com/pirtwo/griddedjs)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/pirtwo/griddedjs/issues)
+[](https://img.shields.io/github/license/pirtwo/griddedjs)
+
 
 ### 2D grid library for JavaScript
 The porpose of this library is to make working with 2D arrays easier. With the help of this library you can
