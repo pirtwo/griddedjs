@@ -138,14 +138,6 @@ class Grid2D {
         this.cells.splice(index * this.x, this.x);
         this.y--;
     }
-
-    clone() {
-        return new Grid2D({
-            rowNum: this.y,
-            colNum: this.x,
-            cells: this.cells.slice(0)
-        });
-    }
 }
 
 module.exports = Grid2D;
