@@ -33,6 +33,14 @@ test('test getY', () => {
   });
 });
 
+test('test get cell', () => {
+  let randX = randInt(0, x - 1),
+    randY = randInt(0, y - 1),
+    sample = grid.cell(randX, randY);
+
+  expect(sample.value).toBe(randY * x + randX);
+});
+
 test('test insert and delete', () => {
   let sample, indexX = randInt(0, x - 1),
     indexY = randInt(0, y - 1);
