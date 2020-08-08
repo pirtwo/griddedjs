@@ -52,7 +52,7 @@ class Grid2D {
     /**
      * fills the grid with a value, array or value returned from fn.
      * @example
-     * let grid = new Grid2D(3,3);
+     * let grid = new Grid2D(3, 3);
      * grid.fill(() => {
      *      return Math.random();
      * });
@@ -71,7 +71,7 @@ class Grid2D {
     }
 
     /**
-     * returns a cell value based on its cartesian coordinates.
+     * returns a cell based on its position in the grid.
      * @param {Number} x 
      * @param {Number} y 
      */
@@ -112,6 +112,10 @@ class Grid2D {
         return [...this.getY()][index];
     }
 
+    /**
+     * deletes the column with provided index from grid.
+     * @param {Number} index 
+     */
     deleteX(index) {
         if (index < 0 || index > this.x)
             throw Error(`Grid2D: invalid X index ${index} in delete.`);
@@ -123,6 +127,10 @@ class Grid2D {
         this.x--;
     }
 
+    /**
+     * deletes the row with provided index from grid.
+     * @param {Number} index 
+     */
     deleteY(index) {
         if (index < 0 || index > this.y)
             throw Error(`Grid2D: invalid Y index ${index} in delete.`);

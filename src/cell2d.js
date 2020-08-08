@@ -1,4 +1,12 @@
+/**
+ * wrapper class for storing values in grid2d.
+ */
 class Cell2D {
+    /**
+     * 
+     * @param {Grid2D} grid 
+     * @param {any} value 
+     */
     constructor(grid, value = undefined) {
         this.grid = grid;
         this.value = value;
