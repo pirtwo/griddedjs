@@ -33,7 +33,7 @@ class Cell2D {
      * returns array of adjacent cells.
      * @returns {Array}
      */
-    adjacents() {
+    adjacent() {
         let { x, y } = this.position();
 
         return [...this.grid].filter(cell => (
@@ -44,9 +44,9 @@ class Cell2D {
     }
 
     /**
-     * returns array of neighbour cells.
+     * returns array of neighbor cells.
      */
-    neighbours() {
+    neighbor() {
         let { x, y } = this.position();
 
         return [...this.grid].filter(cell =>
