@@ -85,7 +85,7 @@ class Grid2D {
      */
     insertX(index) {
         if (index < 0 || index > this.x)
-            throw Error(`Grid2D: invalid col index ${index} in insert.`);
+            throw Error(`Grid2D: invalid X index ${index} in insert.`);
 
         for (let i = this.y - 1; i >= 0; i--) {
             let elmIndex = i * this.x + index;
@@ -102,7 +102,7 @@ class Grid2D {
      */
     insertY(index) {
         if (index < 0 || index > this.y)
-            throw Error(`Grid2D: invalid row index ${index} in insert.`);
+            throw Error(`Grid2D: invalid Y index ${index} in insert.`);
 
         this.cells.splice(index * this.x, 0, ...new Array(this.x).fill(undefined).map(i => {
             return new Cell2D(this, undefined);
@@ -112,12 +112,23 @@ class Grid2D {
         return [...this.getY()][index];
     }
 
-    deleteRow(index) {
+    deleteX(index) {
+        if (index < 0 || index > this.x)
+            throw Error(`Grid2D: invalid X index ${index} in delete.`);
 
+        for (let i = this.y - 1; i >= 0; i--) {
+            let elmIndex = i * this.x + index;
+            this.cells.splice(elmIndex, 1);   
+        }
+        this.x--;
     }
 
-    deleteCol(index) {
+    deleteY(index) {
+        if (index < 0 || index > this.y)
+            throw Error(`Grid2D: invalid Y index ${index} in delete.`);
 
+        this.cells.splice(index * this.x, this.x);
+        this.y--;
     }
 
     clone() {
