@@ -9,8 +9,6 @@ test('test constructor', () => {
   expect(grid.x).toBe(x);
   expect(grid.y).toBe(y);
   expect(grid.cells.length).toBe(x * y);
-
-  //console.log([...grid.getY()]);
 });
 
 test('test getX', () => {
@@ -35,20 +33,22 @@ test('test getY', () => {
   });
 });
 
-test('test insert', () => {
-  let sample, indexX = randInt(0, x - 1), indexY = randInt(0, y - 1);
+test('test insert and delete', () => {
+  let sample, indexX = randInt(0, x - 1),
+    indexY = randInt(0, y - 1);
 
   grid.insertX(indexX).map(i => i.value = 'z');
   sample = [...grid.getX()][indexX].map(i => i.value);
   expect(sample.every(i => i === 'z'));
 
-  //console.log([...grid.getY()]);
-
   grid.insertY(indexY).map(i => i.value = 'x');
   sample = [...grid.getY()][indexY].map(i => i.value);
   expect(sample.every(i => i === 'x'));
 
-  //console.log([...grid.getY()]);
+  grid.deleteY(indexY);
+  grid.deleteX(indexX);
+
+  expect([...grid].every(i => i.value >= 0 && i.value < x * y)).toBe(true);
 });
 
 
