@@ -1,7 +1,7 @@
 # Gridded.js
 [![Build Status](https://travis-ci.com/pirtwo/griddedjs.svg?branch=master)](https://travis-ci.com/pirtwo/griddedjs)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/pirtwo/griddedjs/issues)
-[](https://img.shields.io/github/license/pirtwo/griddedjs)
+[![](https://img.shields.io/github/license/pirtwo/griddedjs)](https://github.com/pirtwo/griddedjs/blob/master/LICENSE)
 
 
 ### 2D grid library for JavaScript
