@@ -1,12 +1,13 @@
 # Gridded.js
 [![Build Status](https://travis-ci.com/pirtwo/griddedjs.svg?branch=master)](https://travis-ci.com/pirtwo/griddedjs)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/pirtwo/griddedjs/issues)
 
 ### 2D grid library for JavaScript
-create 2d array for storing your data in a grid structure and access data with x (column) and y (row) coordinates.
+The porpose of this library is to make working with 2D arrays easier. With the help of this library you can
+easily create a grid structure, and store or retrieve your data with ease in that context.
 
 ### Usage
-**important**: library exports the Cell2D class for wrappeing user data, all values should be wrapped with Cell2D class before adding to the Grid2D.
+**important**: library exports the Cell2D class for wrapping cell data, all values should be wrapped with Cell2D class before adding to the Grid2D.
 
 ```javascript
 import { Grid2D, Cell2D } from 'gridded';
@@ -41,14 +42,14 @@ for (cell in grid) {
     // get cell index in the grid.cells array
     cell.index();
 
-    // get all neighbours of cell
-    cell.neighbours().forEach(i => { 
-        // do stuff with neighbours
+    // get all neighbor of cell
+    cell.neighbor().forEach(i => { 
+        // do stuff with neighbor
     });
     
-    // get all adjacents of cell
-    cell.adjacents().forEach(i => { 
-        // do stuff with adjacents
+    // get all adjacent of cell
+    cell.adjacent().forEach(i => { 
+        // do stuff with adjacent
     });
 }
 
