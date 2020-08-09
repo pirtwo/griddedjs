@@ -116,9 +116,22 @@ for (row in grid.getY()) {
 
 #### fill(value)
 This method fills the grid (2D array) with provided value, the value could be a primitive or array. The provided values will wrap with class Cell2D before adding to the 2D array. Also you can provide a callback function that will be called for each cell and the returned value from function will be used as cell value.
+```javascript
+let grid = new Grid2D(2, 2);
+grid.fill(0);                   // fill with value
+grid,fill([0, 0, 1, 1]          // fill with array
+grid.fill(() => {               // fill with callback function
+    return { price: 2.99 }
+});
+
+```
 
 #### cell(x, y)
 This method will return the cell (class Cell2D) at position x and y if exists.
+```javascript
+let grid = new Grid2D(2, 2);
+let cell = grid.cell(0, 1);
+```
 
 #### insertX(index)
 This method will insert a new column at index and will shift the columns after index + 1 to the right. The new cells will be initialized with undefined value and will be returned as an array.
@@ -137,9 +150,17 @@ let newRow = grid.insertY(1);   // insert new row between row-0 and row-2
 
 #### deleteX(index)
 This method deletes the column[index] of the grid.
+```javascript
+let grid = new Grid2D(2, 2);
+grid.deleteX(0);                // deletes first column of grid
+```
 
 #### deleteY(index)
 This method deletes the row[index] of the grid.
+```javascript
+let grid = new Grid2D(2, 2);
+grid.deleteY(0);                // deletes first row of grid
+```
 
 
 ### Cell2D methods
@@ -163,6 +184,12 @@ let {x, y} = grid.cell(1, 1).position();  // result will be x = 1 and y = 1
 
 #### adjacent()
 Returns the adjacent of the cell as an array.
+```javascript
+let grid = new Grid2D(3, 3);
+grid.cell(1, 1).adjacent().forEach(i => {
+    // do stuff
+});
+```
 ```
             X
     _________________________
@@ -174,6 +201,12 @@ Returns the adjacent of the cell as an array.
 
 #### neighbor()
 Returns the neighbors of the cell as an array.
+```javascript
+let grid = new Grid2D(3, 3);
+grid.cell(1, 1).neighbor().forEach(i => {
+    // do stuff
+});
+```
 ```
             X
     _________________________
