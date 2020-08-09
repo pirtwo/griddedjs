@@ -8,10 +8,10 @@
   },
   "repository": "https://github.com/pirtwo/griddedjs",
   "keywords": [
-    "Grid",
+    "grid",
     "array",
-    "Grid 2D",
-    "2D Array"
+    "grid 2d",
+    "2d Array"
   ],
   "author": "Ahmad-Fz",
   "license": "MIT",
