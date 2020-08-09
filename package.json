@@ -1,7 +1,7 @@
 {
-  "name": "@pirtwo/griddedjs",
-  "version": "1.0.1",
-  "description": "A simple library for creating and working with 2D arrays",
+  "name": "griddedjs",
+  "version": "1.0.0",
+  "description": "small library for creating and working with 2D arrays",
   "main": "index.js",
   "scripts": {
     "test": "jest"
