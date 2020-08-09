@@ -7,6 +7,11 @@
 ### 2D grid library for JavaScript
 The aim of this library is to make working with 2D arrays easier. With the help of this library you can easily create a grid structure, and store or retrieve your data with ease in that context.
 
+### install
+```
+npm i --save griddedjs
+```
+
 ### Usage
 **important**: library exports the Cell2D class for wrapping cell data, all values should be wrapped with Cell2D class before adding to the Grid2D.<br/>
 **important**: all indexes starts from 0.
