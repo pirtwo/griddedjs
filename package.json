@@ -1,6 +1,6 @@
 {
   "name": "griddedjs",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "small library for creating and working with grids and 2D arrays",
   "main": "index.js",
   "scripts": {
