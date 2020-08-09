@@ -12,7 +12,7 @@ The aim of this library is to make working with 2D arrays easier. With the help 
 **important**: all indexes starts from 0.
 
 ```javascript
-import { Grid2D, Cell2D } from 'gridded';
+import { Grid2D, Cell2D } from 'griddedjs';
 
 // Grid2D(x, y)
 // create a grid with 2 rows and 3 columns
