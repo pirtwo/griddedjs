@@ -5,7 +5,7 @@
 
 
 ### 2D grid library for JavaScript
-The aim of this library is to make working with 2D arrays easier. With the help of this library you can easily create a grid structure, and store or retrieve your data with ease in that context.
+The aim of this library is to make working with 2D arrays easier. With the help of this library, you can easily create a grid structure and store or retrieve your data with ease in that context.
 
 ### install
 ```
@@ -13,8 +13,8 @@ npm i --save griddedjs
 ```
 
 ### Usage
-**important**: library exports the Cell2D class for wrapping cell data, all values should be wrapped with Cell2D class before adding to the Grid2D.<br/>
-**important**: all indexes starts from 0.
+**important**: This library exports the Cell2D class for wrapping cell data, all values should be wrapped with Cell2D class before adding to the Grid2D.<br/>
+**important**: All indexes starts from 0.
 
 ```javascript
 import { Grid2D, Cell2D } from 'griddedjs';
@@ -89,7 +89,7 @@ grid.deleteX(3);
 
 ### Grid2D methods
 #### constructor(x, y)
-This method takes to integer number ( x > 0 and y > 0) as a dimensions of 2D array and fill the array with cells (class Cell2D) with undefined initial values.
+This method takes two integer numbers ( x > 0 and y > 0) as dimensions of the grid and fills it with cells (class Cell2D). The initial value of each cell is undefined.
 ```
             X
     ________________
@@ -100,7 +100,7 @@ This method takes to integer number ( x > 0 and y > 0) as a dimensions of 2D arr
 ```
 
 #### getX()
-This is a generator function to let us iterate through the columns of the grid (x0, x1, x2, ...) with using the for in or spread values.
+Generator function, lets us iterate through the columns of the grid (x0, x1, x2, ...).
 ```javascript
 let column0 = [...grid.getX()][0];
 
@@ -110,7 +110,7 @@ for (col in grid.getX()) {
 ```
 
 #### getY()
-This is a generator function to let us iterate through the rows of the grid (y0, y1, y2, ...) with using the for in or spread values.
+Generator function, lets us iterate through the rows of the grid (y0, y1, y2, ...).
 ```javascript
 let row0 = [...grid.getY()][0];
 
@@ -120,7 +120,7 @@ for (row in grid.getY()) {
 ```
 
 #### fill(value)
-This method fills the grid (2D array) with provided value, the value could be a primitive or array. The provided values will wrap with class Cell2D before adding to the 2D array. Also you can provide a callback function that will be called for each cell and the returned value from function will be used as cell value.
+This method fills the grid with provided value, the value could be a primitive or array. Provided values will be wrapped by class Cell2D. Also, you can provide a callback function that will be called for each cell and the returned value from the function will be used as cell value.
 ```javascript
 let grid = new Grid2D(2, 2);
 grid.fill(0);                   // fill with value
@@ -132,14 +132,14 @@ grid.fill(() => {               // fill with callback function
 ```
 
 #### cell(x, y)
-This method will return the cell (class Cell2D) at position x and y if exists.
+Returns the cell (class Cell2D) at position x and y.
 ```javascript
 let grid = new Grid2D(2, 2);
 let cell = grid.cell(0, 1);
 ```
 
 #### insertX(index)
-This method will insert a new column at index and will shift the columns after index + 1 to the right. The new cells will be initialized with undefined value and will be returned as an array.
+This method will insert a new column at the parameter index. New cells will be initialized with undefined value and will be returned as an array.
 ```javascript
 let grid = new Grid2D(2, 5);    // create grid with 5 row and 2 column
 let newCol = grid.insertX(3);   // insert new column to the end
@@ -147,7 +147,7 @@ let newCol = grid.insertX(3);   // insert new column to the end
 ```
 
 #### insertY(index)
-This method will insert a new row at index and will shift the rows after index + 1 to down. The new cells will be initialized with undefined value and will be returned as an array.
+This method will insert a new row at the parameter index. New cells will be initialized with undefined value and will be returned as an array.
 ```javascript
 let grid = new Grid2D(2, 2);    // create grid with 5 row and 2 column
 let newRow = grid.insertY(1);   // insert new row between row-0 and row-2
@@ -170,10 +170,10 @@ grid.deleteY(0);                // deletes first row of grid
 
 ### Cell2D methods
 #### constructor(grid, value = undefined)
-This class is a wrapper for the values in the 2D array and takes two arguments, first one is the related grid that this cells is belong to and the second one is the value of the cell.
+This class is a wrapper for the cell value. The first parameter is the related grid that this cell belongs to, the second parameter is the value of the cell.
 
 #### index()
-Returns the index of the cell (all cells in Grid2D class will be stored in a an array).
+Returns the index of the cell (all cells in Grid2D class will be stored in an array).
 ```javascript
 let grid = new Grid2D(2, 2);
 let cell = [...grid][3];
